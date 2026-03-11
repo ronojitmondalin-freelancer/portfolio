@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | rono</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-header {
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: var(--text-main);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        .project-video-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: var(--border-subtle);
+            transition: transform 0.3s ease;
+        }
+        .project-video-card:hover {
+            transform: translateY(-4px);
+        }
+        .project-video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            position: relative;
+        }
+        .project-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .project-info {
+            padding: var(--spacing-md);
+        }
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .loading-state {
+            text-align: center;
+            padding: var(--spacing-xl);
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-wrapper">
+        <header class="header">
+            <div class="logo-area">
+                <i class="ph-fill ph-triangle logo-icon"></i>
+                <a href="index.html" class="logo-text" style="font-weight: 700;">rono</a>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="projects-header reveal visible">
+                <a href="index.html" class="back-link"><i class="ph ph-arrow-left"></i> Home</a>
+                <h1 style="font-size: 2rem; margin-left: var(--spacing-md);">All Projects</h1>
+            </div>
+
+            <div id="projects-container" class="projects-grid reveal visible">
+                <div class="loading-state" id="loading-indicator">
+                    <i class="ph ph-spinner ph-spin" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <p>Scanning for project videos...</p>
+                    <p style="font-size: 0.85rem; margin-top: var(--spacing-sm);">Drop videos like <code>project1.mp4</code> in the <code>project_videos</code> folder.</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer reveal visible" style="margin-top: calc(var(--spacing-xxl) * 2);">
+            <div class="footer-content">
+                <p>&copy; 2026 rono. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="https://github.com/ronojitmondalin-freelancer" target="_blank" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                    <a href="mailto:ronojit.mondal.in@gmail.com" class="text-accent hover-underline">ronojit.mondal.in@gmail.com</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="projects.js"></script>
+</body>
+</html>
